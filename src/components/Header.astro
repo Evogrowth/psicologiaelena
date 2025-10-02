@@ -1,0 +1,63 @@
+---                              
+import Image from "astro/components/Image.astro"
+import BarsImage from "../assets/bars-solid-full.svg"
+import XMarkImage from "../assets/xmark-solid-full.svg"
+import CerebroImage from "../assets/cerebro.png"
+---   
+
+<!-- Header -->
+<nav id="navBar" class="shadow-sm top-0 bg-white sticky w-full">
+    <div class="py-4 px-2 sm:px-4 flex justify-between items-center" >
+        <div>
+            <button name="navigation" data-target-id="top" class="text-3xl text-center text-gray-600 hover:text-gray-400 transition-colors cursor-pointer" style="font-family: cormorant;" title="Regresar al inicio">
+                ELENA DORANTES
+            </button>
+        </div>
+        <div class="flex">
+            <button type="button" onclick="toggleSidebar()" class="cursor-pointer" title="menu">
+                <Image src={BarsImage} alt="Open menu icon" class="h-8 w-auto" />
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar-container" class="fixed w-screen h-screen top-0 left-0 -z-10">
+    <div id="sidebar" class="fixed top-0 right-0 h-full sm:w-96 w-full bg-white shadow-lg z-20 transform translate-x-full">
+        <div class="w-full flex p-4">
+            <button type="button" onclick="toggleSidebar()" class="ml-auto cursor-pointer hover:font-bold" title="cerrar menu">
+                <Image src={XMarkImage} alt="Close menu icon" class="h-6 w-auto" />
+            </button>
+        </div>
+        <div style="font-family: cormorant;" class="pt-4 pb-10 h-full text-2xl flex flex-col gap-6 text-center [&>button]:border-b [&>button]:border-gray-400 [&>button]:hover:border-black [&>button]:hover:border-b-2 [&>button]:hover:font-bold [&>button]:pb-1 [&>button]:cursor-pointer">
+            <button onclick="toggleSidebar()" name="navigation" data-target-id="about" >
+                Acerca de
+            </button>
+            <button onclick="toggleSidebar()" name="navigation" data-target-id="services">
+                Servicios
+            </button>
+            <button onclick="toggleSidebar()" name="navigation" data-target-id="contact" >
+                Contacto
+            </button>
+            <div class="h-full text-base flex flex-col w-full items-center justify-center">
+                <Image src={CerebroImage} alt="Cerebro sano" class="w-60 h-auto" />
+                <p>Eres aquello que haces, no aquello que dices que harás</p>
+                <p class="font-semibold ">C.G. Jung</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/scroll.js" />
+
+<script is:inline>
+    function toggleSidebar() {
+        let sidebar = document.getElementById('sidebar');
+        let sidebarContainer = document.getElementById('sidebar-container');
+        sidebar?.classList.toggle('translate-x-full');
+        sidebarContainer?.classList.toggle('bg-black/70');
+        sidebarContainer?.classList.toggle('-z-10');
+        document.body.classList.toggle('overflow-hidden')
+    }
+
+</script>
