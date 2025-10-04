@@ -10,7 +10,7 @@
     </div>
 
     <!-- Formulario de Contacto  -->
-    <form class="w-full mt-6 space-y-14" netlify>
+    <form class="w-full mt-6 space-y-14" name="contact" data-netlify="true" netlify-honeypot="username">
         <!-- Nombre y Apellidos -->
         <div class="flex flex-col space-y-14 md:flex-row gap-x-9">
             <div class="grow space-y-5">
@@ -50,6 +50,9 @@
             <label for="birthdate" class="text-[#BF1F3C] contact-form__label">Fecha de Nacimiento<span class="contact-form__required">*</span></label>
             <input id="birthdate" type="date" class="text-[#0597F2] contact-form__input">
         </div>
+
+        <!-- h0neypot -->
+        <input class="hidden" type="text" name="username" >
 
         <!-- Botón para enviar -->
         <button type="submit" class="contact-form__submit">Enviar</button>
