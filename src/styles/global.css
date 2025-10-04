@@ -25,21 +25,33 @@
 }
 
 @layer components {
-    .contact-form__label {
-        @apply block text-xl md:text-2xl
-    }
+  .contact-form__label {
+    @apply block text-xl md:text-2xl
+  }
 
-    .contact-form__input {
-        @apply w-full text-xl md:text-2xl border-b-2 border-b-[#1A202C] focus:outline-0 focus:border-b-blue-400
-    }
+  .contact-form__input {
+    @apply w-full text-xl md:text-2xl border-b-2 border-b-[#1A202C] focus:outline-0 focus:border-b-blue-400 group-[.invalid]:border-b-red-500
+  }
 
-    .contact-form__submit {
-        @apply block mx-auto bg-[#787872] font-nunito text-sm md:text-base text-center text-white tracking-[1em] rounded-xs uppercase pl-4 pr-2 py-2 cursor-pointer shadow-[15px_4px_4px_rgba(0,0,0,0.25)]
-    }
+  .contact-form__message {
+    @apply hidden text-red-500 text-lg
+  }
 
-    .contact-form__required {
-        @apply text-[#B32D2E]
-    }
+  .contact-form__invalid {
+    @apply group-[.invalid]:block
+  }
+
+  .contact-form__invalid-format {
+    @apply group-[.invalid-format]:block
+  }
+
+  .contact-form__submit {
+    @apply block mx-auto bg-[#787872] font-nunito text-sm md:text-base text-center text-white tracking-[1em] rounded-xs uppercase pl-4 pr-2 py-2 cursor-pointer shadow-[15px_4px_4px_rgba(0,0,0,0.25)]
+  }
+
+  .contact-form__required {
+    @apply text-[#B32D2E]
+  }
 }
 
 @theme {

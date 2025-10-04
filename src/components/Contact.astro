@@ -10,25 +10,38 @@
     </div>
 
     <!-- Formulario de Contacto  -->
-    <form class="w-full mt-6 space-y-14">
+    <form id="contact-form" class="w-full mt-6 space-y-14" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
         <!-- Nombre y Apellidos -->
         <div class="flex flex-col space-y-14 md:flex-row gap-x-9">
             <div class="grow space-y-5">
                 <label for="name" class="text-[#F2AE2E] contact-form__label">Nombre<span class="contact-form__required">*</span></label>
-                <input id="name" type="text" class="contact-form__input">
+                
+                <div id="name-group" class="group">
+                    <input id="name" name="name" type="text" class="contact-form__input" maxlength="50">
+                    <p class="contact-form__message contact-form__invalid">Por favor escribe tu nombre.</p>
+                </div>
             </div>
 
             <div class="grow space-y-5">
                 <label for="lastname" class="text-[#F25A38] contact-form__label">Apellidos<span class="contact-form__required">*</span></label>
-                <input id="lastname" type="text" class="contact-form__input">
+                
+                <div id="lastname-group" class="group">
+                    <input id="lastname" name="lastname" type="text" class="contact-form__input" maxlength="50">
+                    <p class="contact-form__message contact-form__invalid">Por favor escribe tus apellidos.</p>
+                </div>
             </div>
         </div>
 
         <!-- Número de Contacto -->
         <div class="flex justify-center">
-            <div class="w-full md:w-80 space-y-5" x-data>
+            <div class="w-full md:w-96 space-y-5" x-data>
                 <label for="phone-number" class="text-[#BF1F3C] contact-form__label">Número de Contacto<span class="contact-form__required">*</span></label>
-                <input id="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
+
+                <div id="phone-number-group" class="group">
+                    <input id="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
+                    <p class="contact-form__message contact-form__invalid">Por favor escribe tu número de contacto.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor completa tu número de contacto.</p>
+                </div>
             </div>
         </div>
 
@@ -36,20 +49,34 @@
         <div class="flex flex-col space-y-14 md:flex-row gap-x-9">
             <div class="grow space-y-5">
                 <label for="email" class="text-[#F2AE2E] contact-form__label">Correo Electrónico<span class="contact-form__required">*</span></label>
-                <input id="email" type="text" class="contact-form__input">
+
+                <div id="email-group" class="group">
+                    <input id="email" name="email" type="text" class="contact-form__input" maxlength="250">
+                    <p class="contact-form__message contact-form__invalid">Por favor escribe tu correo electrónico.</p>
+                </div>
             </div>
 
             <div class="grow space-y-5">
                 <label for="service" class="text-[#0597F2] contact-form__label">Servicio de Interés<span class="contact-form__required">*</span></label>
-                <input id="service" type="text" class="contact-form__input">
+                
+                <div id="service-group" class="group">
+                    <input id="service" name="service" type="text" class="contact-form__input" maxlength="250">
+                    <p class="contact-form__message contact-form__invalid">Por favor escribe tu servicio de interés.</p>
+                </div>
             </div>
         </div>
 
         <!-- Fecha de Nacimiento -->
         <div class="grow space-y-5">
             <label for="birthdate" class="text-[#BF1F3C] contact-form__label">Fecha de Nacimiento<span class="contact-form__required">*</span></label>
-            <input id="birthdate" type="date" class="text-[#0597F2] contact-form__input">
+            
+            <div id="birthdate-group" class="group">
+                <input id="birthdate" name="birthdate" type="date" class="text-[#0597F2] contact-form__input">
+                <p class="contact-form__message contact-form__invalid">Por favor escribe tu fecha de nacimiento.</p>
+            </div>
         </div>
+
+        <div data-netlify-recaptcha="true"></div>
 
         <!-- Botón para enviar -->
         <button type="submit" class="contact-form__submit">Enviar</button>
