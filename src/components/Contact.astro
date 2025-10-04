@@ -10,7 +10,7 @@
     </div>
 
     <!-- Formulario de Contacto  -->
-    <form id="contact-form" class="w-full mt-6 space-y-14" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+    <form id="contact-form" class="w-full mt-6 space-y-14" name="contact" method="POST" data-netlify="true" netlify-honeypot="username" data-netlify-recaptcha="true">
         <!-- Nombre y Apellidos -->
         <div class="flex flex-col space-y-14 md:flex-row gap-x-9">
             <div class="grow space-y-5">
@@ -77,6 +77,9 @@
         </div>
 
         <div data-netlify-recaptcha="true"></div>
+
+        <!-- honeypot -->
+        <input class="hidden" type="text" name="username" >
 
         <!-- Botón para enviar -->
         <button type="submit" class="contact-form__submit">Enviar</button>
