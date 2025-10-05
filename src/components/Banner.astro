@@ -1,0 +1,22 @@
+---
+import Image from "astro/components/Image.astro"
+import CerebroImage from "../assets/Cerebro.svg"
+import Section from "./Section.astro"
+---
+<Section Id="banner" AddPadding={false}>
+    <div class="flex flex-col justify-center items-center pt-20">
+        <Image src={CerebroImage} alt="Banner" class="w-full h-auto px-4 drop-shadow-blue-400 drop-shadow-lg sm:max-w-lg" />
+        <div class="-mt-24 w-full bg-stone-100 text-center  drop-shadow-xs py-8 px-3">
+            <p class="font-cormorant text-yellow-500 text-lg sm:text-2xl">Terapia Cognitivo-conductual</p>
+            <p class="font-cormorant text-2xl sm:text-4xl pt-4"> 
+                <span style="color: #8C1642">
+                    TERAPIA
+                </span>
+                <span style="color: #0597F2" class="tracking-widest">
+                    PSICOLÓGICA
+                </span>
+            </p>
+        </div>
+        <div class="w-full h-12 bg-[linear-gradient(to_right,_#c0c1bf_0%,_#f7f7f5_10%,_#f7f7f5_90%,_#c0c1bf_100%)] sm:bg-[linear-gradient(to_right,_#c0c1bf_0%,_#f7f7f5_5%,_#f7f7f5_95%,_#c0c1bf_100%)]" />
+    </div>
+</Section>
