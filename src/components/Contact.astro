@@ -38,7 +38,7 @@ import Section from "./Section.astro"
                 <label for="phone-number" class="text-[#BF1F3C] contact-form__label">Número de Contacto<span class="contact-form__required">*</span></label>
 
                 <div id="phone-number-group" class="group">
-                    <input id="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
+                    <input id="phone-number" name="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu número de contacto.</p>
                     <p class="contact-form__message contact-form__invalid-format">Por favor completa tu número de contacto.</p>
                 </div>
@@ -53,6 +53,7 @@ import Section from "./Section.astro"
                 <div id="email-group" class="group">
                     <input id="email" name="email" type="text" class="contact-form__input" maxlength="250">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu correo electrónico.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe tu correo electrónico correctamente.</p>
                 </div>
             </div>
 
@@ -85,3 +86,5 @@ import Section from "./Section.astro"
         <button type="submit" class="contact-form__submit">Enviar</button>
     </form>
 </Section>
+
+<script src="../scripts/contact-form.js"></script>
