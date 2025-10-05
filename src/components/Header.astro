@@ -2,14 +2,14 @@
 import Image from "astro/components/Image.astro"
 import BarsImage from "../assets/bars-solid-full.svg"
 import XMarkImage from "../assets/xmark-solid-full.svg"
-import CerebroImage from "../assets/Cerebro.png"
+import CerebroImage from "../assets/Cerebro.svg"
 ---   
 
 <!-- Header -->
-<nav id="navBar" class="shadow-sm top-0 bg-white sticky w-full">
+<nav id="navBar" class="shadow-sm top-0 bg-white sticky w-full z-10">
     <div class="py-4 px-2 sm:px-4 flex justify-between items-center" >
         <div>
-            <button name="navigation" data-target-id="top" class="text-3xl text-center text-gray-600 hover:text-gray-400 transition-colors cursor-pointer" style="font-family: cormorant;" title="Regresar al inicio">
+            <button name="navigation" data-target-id="top" class="text-xl sm:text-3xl text-center text-gray-600 hover:text-gray-400 transition-colors cursor-pointer" style="font-family: cormorant;" title="Regresar al inicio">
                 ELENA DORANTES
             </button>
         </div>
@@ -40,7 +40,7 @@ import CerebroImage from "../assets/Cerebro.png"
                 Contacto
             </button>
             <div class="h-full text-base flex flex-col w-full items-center justify-center">
-                <Image src={CerebroImage} alt="Cerebro sano" class="w-60 h-auto" />
+                <Image src={CerebroImage} alt="Cerebro sano" class="w-60 h-auto drop-shadow-blue-400 drop-shadow-lg" />
                 <p>Eres aquello que haces, no aquello que dices que harás</p>
                 <p class="font-semibold ">C.G. Jung</p>
             </div>
@@ -57,6 +57,7 @@ import CerebroImage from "../assets/Cerebro.png"
         sidebar?.classList.toggle('translate-x-full');
         sidebarContainer?.classList.toggle('bg-black/70');
         sidebarContainer?.classList.toggle('-z-10');
+        sidebarContainer?.classList.toggle('z-10');
         document.body.classList.toggle('overflow-hidden')
     }
 
