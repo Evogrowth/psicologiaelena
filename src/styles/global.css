@@ -37,7 +37,6 @@
     @apply text-[#8C1642]! text-xl!
   }
 
-
   .contact-form__label {
     @apply block text-xl md:text-2xl
   }

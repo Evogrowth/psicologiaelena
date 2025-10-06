@@ -77,7 +77,10 @@ import Section from "./Section.astro"
             </div>
         </div>
 
-        <div data-netlify-recaptcha="true"></div>
+        <div id="recaptcha-group" class="group">
+            <div data-netlify-recaptcha="true"></div>
+            <p class="contact-form__message contact-form__invalid">Por favor completa el ReCAPTCHA.</p>
+        </div>
 
         <!-- honeypot -->
         <input class="hidden" type="text" name="username" >

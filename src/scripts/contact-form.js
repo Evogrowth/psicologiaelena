@@ -1,5 +1,9 @@
 import EmailValidator from 'email-validator';
 
+const isProd = import.meta.env.PROD;
+
+const recaptchaGroup = document.querySelector("#recaptcha-group");
+
 const fields = [
     document.querySelector("#name-group"),
     document.querySelector("#lastname-group"),
@@ -54,6 +58,16 @@ const handleSubmit = async event => {
         return;
     }
 
+    if (isProd) {
+        // Comprobar que el usuario completo el reCAPTCHA
+        const recaptcha = document.querySelector('textarea[name="g-recaptcha-response"]');
+
+        if (!recaptcha || !recaptcha.value) {
+            recaptchaGroup.classList.add("invalid");
+            return;
+        }
+    }
+
     const myForm = event.target;
     const formData = new FormData(myForm);
 
@@ -90,6 +104,17 @@ const handleSubmit = async event => {
         swalConfig.icon = 'success';
         swalConfig.title = '¡Gracias por tu mensaje!';
         swalConfig.text = 'Pronto te contactaré para agendar tu cita y resolver cualquier duda que tengas.';
+
+        // Limpiar el formulario
+        for (let field of fields) {
+            const input = field.querySelector("input");
+            input.value = "";
+        }
+
+        if (isProd) {
+            // Reiniciar el reCAPTCHA
+            grecaptcha.reset();
+        }
     }
     else {
         swalConfig.icon = 'error';
@@ -97,10 +122,14 @@ const handleSubmit = async event => {
         swalConfig.text = 'Lamento el inconveniente, pero tu mensaje no se ha enviado. Puedes volver a intentarlo en breve o contactarme por otro canal.';
     }
 
-    // Cerrar spiner de carga
+    // Cerrar spinner de carga
     Swal.close();
 
     Swal.fire(swalConfig);
 };
 
 document.querySelector("#contact-form").addEventListener("submit", handleSubmit);
+
+recaptchaGroup.addEventListener("click", function () {
+    recaptchaGroup.classList.remove("invalid");
+});
