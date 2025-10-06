@@ -2,7 +2,7 @@ import EmailValidator from 'email-validator';
 
 const isProd = import.meta.env.PROD;
 
-const recaptchaGroup = document.querySelector("#recaptcha-group");
+const recaptchaErrorMessage = document.querySelector("#recaptcha-error-message");
 
 const fields = [
     document.querySelector("#name-group"),
@@ -63,8 +63,11 @@ const handleSubmit = async event => {
         const recaptcha = document.querySelector('textarea[name="g-recaptcha-response"]');
 
         if (!recaptcha || !recaptcha.value) {
-            recaptchaGroup.classList.add("invalid");
+            recaptchaErrorMessage.classList.remove("hidden");
             return;
+        }
+        else {
+            recaptchaErrorMessage.classList.add("hidden");
         }
     }
 
@@ -129,9 +132,3 @@ const handleSubmit = async event => {
 };
 
 document.querySelector("#contact-form").addEventListener("submit", handleSubmit);
-
-if (isProd) {
-    document.querySelector(".g-recaptcha").addEventListener("click", function () {
-        recaptchaGroup.classList.remove("invalid");
-    });
-}

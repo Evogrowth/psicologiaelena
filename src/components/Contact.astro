@@ -77,13 +77,12 @@ import Section from "./Section.astro"
             </div>
         </div>
 
-        <div id="recaptcha-group" class="group">
-            <div data-netlify-recaptcha="true"></div>
-            <p class="contact-form__message contact-form__invalid">Por favor completa el ReCAPTCHA.</p>
-        </div>
+        <div data-netlify-recaptcha="true"></div>
 
         <!-- honeypot -->
-        <input class="hidden" type="text" name="username" >
+        <input class="hidden" type="text" name="username">
+
+        <p id="recaptcha-error-message" class="hidden text-red-500 text-xl text-center">Por favor completa el reCAPTCHA</p>
 
         <!-- Botón para enviar -->
         <button type="submit" class="contact-form__submit">Enviar</button>
