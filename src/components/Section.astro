@@ -1,0 +1,12 @@
+---
+interface Props {
+    Id: string;
+    AddPadding?: boolean;
+    Class?: string;
+}
+
+const { Id, AddPadding = true, Class } = Astro.props;
+---
+<section id={Id} class={AddPadding ? "px-4 sm:px-12 " + Class : Class}>
+    <slot />
+</section>

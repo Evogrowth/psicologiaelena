@@ -10,22 +10,28 @@ import '../styles/global.css'
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@457&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+		<meta property="og:description" content="Psicología enfocada en terapia cognitivo-conductual enfocada a tus necesidadess.">
+		<meta property="og:title" content="Atención psicológica"></meta>
+		<meta property="og:url" content="https://evogrowth.dev/"/>
+		<meta property="og:image" content="/favicon.svg"/>
+		<meta property="og:type" content="website"/>
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+
+		<title>Atención psicológica</title>
+		<meta name="description" content="Psicología enfocada en terapia cognitivo-conductual enfocada a tus necesidadess.">
+		<meta name="keywords" content="psicologia, salud, salud, mexicali, psicologo, terapia" />
 	</head>
-	<body>
+	<body id="top" class="min-h-screen w-full m-0 flex flex-col justify-between relative">
 		<Header />
-		<main class="*:px-4 *:sm:px-12">
+		<main class="bg-white">
 			<slot />
 		</main>
 		<Footer />
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<script is:inline src="/scripts/contact-form.js"></script>
+</html>

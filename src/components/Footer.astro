@@ -1,0 +1,20 @@
+---
+const Year = new Date().getFullYear()
+import Section from "./Section.astro"
+---
+<Section Id="footer" >
+    <hr class="border-t border-2 border-gray-800" />
+    <footer style="font-family: lato" class="text-xl font-light px-12 py-12 text-gray-500 flex flex-col lg:flex-row gap-4 text-center justify-center">
+        <p>
+            &copy; {Year}
+        </p>
+        <p class="hidden lg:flex items-center justify-between">|</p>
+        <p>
+            DISEÑADO POR: <a class="underline" href="https://www.instagram.com/gabriela_navarrete13/">ABBY NAVARRETE</a>
+        </p>
+        <p class="hidden lg:flex items-center justify-between">&</p>
+        <p>
+            DESARROLLADO POR <a class="underline" href="https://www.evogrowth.dev/">EVOGROWTH</a>
+        </p>
+    </footer>
+</Section>
