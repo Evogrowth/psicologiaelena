@@ -131,7 +131,7 @@ const handleSubmit = async event => {
 document.querySelector("#contact-form").addEventListener("submit", handleSubmit);
 
 if (isProd) {
-    document.querySelector('div[name="g-recaptcha"]').addEventListener("click", function () {
+    document.querySelector(".g-recaptcha").addEventListener("click", function () {
         recaptchaGroup.classList.remove("invalid");
     });
 }
