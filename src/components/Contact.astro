@@ -38,7 +38,7 @@ import Section from "./Section.astro"
                 <label for="phone-number" class="text-[#BF1F3C] contact-form__label">Número de Contacto<span class="contact-form__required">*</span></label>
 
                 <div id="phone-number-group" class="group">
-                    <input id="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
+                    <input id="phone-number" name="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu número de contacto.</p>
                     <p class="contact-form__message contact-form__invalid-format">Por favor completa tu número de contacto.</p>
                 </div>
@@ -47,16 +47,17 @@ import Section from "./Section.astro"
 
         <!-- Correo Electrónico y Servicio de Interés -->
         <div class="flex flex-col space-y-14 md:flex-row gap-x-9">
-            <div class="grow space-y-5">
+            <div class="w-full space-y-5">
                 <label for="email" class="text-[#F2AE2E] contact-form__label">Correo Electrónico<span class="contact-form__required">*</span></label>
 
                 <div id="email-group" class="group">
                     <input id="email" name="email" type="text" class="contact-form__input" maxlength="250">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu correo electrónico.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe tu correo electrónico correctamente.</p>
                 </div>
             </div>
 
-            <div class="grow space-y-5">
+            <div class="w-full space-y-5">
                 <label for="service" class="text-[#0597F2] contact-form__label">Servicio de Interés<span class="contact-form__required">*</span></label>
                 
                 <div id="service-group" class="group">
@@ -79,9 +80,13 @@ import Section from "./Section.astro"
         <div data-netlify-recaptcha="true"></div>
 
         <!-- honeypot -->
-        <input class="hidden" type="text" name="username" >
+        <input class="hidden" type="text" name="username">
+
+        <p id="recaptcha-error-message" class="hidden text-red-500 text-xl text-center">Por favor completa el reCAPTCHA</p>
 
         <!-- Botón para enviar -->
         <button type="submit" class="contact-form__submit">Enviar</button>
     </form>
 </Section>
+
+<script src="../scripts/contact-form.js"></script>

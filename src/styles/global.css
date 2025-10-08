@@ -25,12 +25,24 @@
 }
 
 @layer components {
+  .contact-form__swal-title {
+    @apply font-normal! text-[#0597F2]! text-3xl!
+  }
+
+  .contact-form__swal-container {
+    @apply font-playfair-display
+  }
+
+  .contact-form__swal-htmlContainer {
+    @apply text-[#8C1642]! text-xl!
+  }
+
   .contact-form__label {
     @apply block text-xl md:text-2xl
   }
 
   .contact-form__input {
-    @apply w-full text-xl md:text-2xl border-b-2 border-b-[#1A202C] focus:outline-0 focus:border-b-blue-400 group-[.invalid]:border-b-red-500
+    @apply w-full text-xl md:text-2xl border-b-2 border-b-[#1A202C] focus:outline-0 focus:border-b-blue-400 group-[.invalid]:border-b-red-500 group-[.invalid-format]:border-b-red-500
   }
 
   .contact-form__message {
