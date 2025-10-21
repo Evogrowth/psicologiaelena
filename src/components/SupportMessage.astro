@@ -1,0 +1,18 @@
+---
+interface Props {
+    Id: string;
+    Class?: string;
+    Text?: string;
+    PaddingX?: string;
+    PaddingY?: string;
+}
+
+const { Id, Class, Text, PaddingX, PaddingY } = Astro.props;
+---
+<section id={Id} class={Class}>
+    <div class="flex flex-col justify-center items-center">
+        <div class=`w-full bg-rose-700/[37.5%] text-center ${PaddingX ? PaddingX : ""} ${PaddingY ? PaddingY : ""}`>
+            <p class="font-cormorant text-pink-900/100 text-2xl sm:text-4xl">{Text ? Text: 'Texto predeterminado.'}</p>
+        </div>
+    </div>
+</section>
