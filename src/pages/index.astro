@@ -2,10 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Contact from '../components/Contact.astro';
 import Banner from '../components/Banner.astro';
+import SupportMessage from '../components/SupportMessage.astro';
 ---
 
 <Layout>
 	<!-- Aqui van los componentes -->
 	<Banner />
+	<SupportMessage Id="seccion_3" Text='"Tu proceso es único. Estamos aquí para acompañarte."' PaddingX='3' PaddingY='24'/>
+	<SupportMessage Id="seccion_5" Text='"Hablar es el primer paso para sanar."' PaddingX='3' PaddingY='32'/>
 	<Contact></Contact>
 </Layout>
