@@ -1,0 +1,35 @@
+---
+import Section from "./Section.astro"
+import FotoImage from "../assets/Foto_Elena.webp"
+import Image from "astro/components/Image.astro"
+---
+
+<Section Id="seccion_2" AddPadding={true} Class="border-b-9 border-neutral-500/30">
+    <div class="flex flex-col justify-center items-center gap-7 p-4 sm:flex-row">
+        <!--Imagen-->
+        <Image src={FotoImage} alt="Image" class="w-sm h-auto sm:w-auto sm:h-[379px]" />
+        <!--Columna Derecha-->
+        <div class="w-full flex flex-col justify-center items-center text-center py-11 sm:w-[425px]">
+        <!--Información -->
+        <div class="flex flex-col justify-center items-center gap-y-3 pb-10">
+            <p class="font-cormorant text-sky-500 text-2xl sm:text-4xl">Eres aquello que haces, no aquello que dices que harás.</p>
+            <hr class="w-[25%] border-neutral-500">
+        </div>
+
+        <p class="font-cormorant text-pink-900/100 text-shadow-lg text-2xl pb-8 mb-3 w-full sm:text-4xl">Elena Dorantes.</p>
+
+        <div class="flex flex-col justify-center items-center pb-8">
+        <Image src={'/favicon.svg'} alt="Icon" width={65} height={57}/>
+        <div class="font-playfair-display text-gray-700 text-base/8">
+            <p>Psicóloga especializada en Terapia Cognitivo-Conductual(TCC).</p>
+            <p>Trabajo desde una prespectiva práctica, basada en evidencia, acompañando a cada persona a identificar y transformar patrones de pensamiento y comportamiento que interfieren con su bienestar.</p>
+            <p>Complemento mi trabajo con técnicas de relajación y manejo de estrés, ofreciendo herramientas concretas para recuperar el equilibrio emocional y mejorar la calidad de vida.</p>
+            <p>Mi espacio terapéutico es seguro, empático y libre de juicio. Cada proceso es único y se adapta a tus necesidades.</p>
+        </div>
+        </div>
+        <div class="px-3 py-2 bg-sky-400/30 border-1 border-black rounded-sm tracking-[4px]">
+            <p class="font-nunito text-base text-shadow-lg">CONFÍA EN EL PROCESO!</p>
+        </div>
+        </div>
+    </div>
+</Section>
