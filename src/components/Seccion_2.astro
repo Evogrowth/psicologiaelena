@@ -2,7 +2,6 @@
 import Section from "./Section.astro"
 import FotoImage from "../assets/Foto_Elena.webp"
 import Image from "astro/components/Image.astro"
-import IconoImage from "../assets/Icono_Elena.webp"
 ---
 
 <Section Id="seccion_2" AddPadding={true} Class="border-b-9 border-neutral-500/30">
@@ -20,7 +19,7 @@ import IconoImage from "../assets/Icono_Elena.webp"
         <p class="font-cormorant text-pink-900/100 text-shadow-lg text-2xl pb-8 mb-3 w-full sm:text-4xl">Elena Dorantes.</p>
 
         <div class="flex flex-col justify-center items-center pb-8">
-        <Image src={IconoImage} alt="Icon" class="h-auto max-w-[65px]" />
+        <Image src={'/favicon.svg'} alt="Icon" width={65} height={57}/>
         <div class="font-playfair-display text-gray-700 text-base/8">
             <p>Psicóloga especializada en Terapia Cognitivo-Conductual(TCC).</p>
             <p>Trabajo desde una prespectiva práctica, basada en evidencia, acompañando a cada persona a identificar y transformar patrones de pensamiento y comportamiento que interfieren con su bienestar.</p>
