@@ -21,6 +21,7 @@ import Imagen from "../assets/phone-number.png"
                 <div id="name-group" class="group">
                     <input id="name" name="name" type="text" class="contact-form__input" maxlength="50">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu nombre.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe un nombre válido (solo letras).</p>
                 </div>
             </div>
 
@@ -30,6 +31,7 @@ import Imagen from "../assets/phone-number.png"
                 <div id="lastname-group" class="group">
                     <input id="lastname" name="lastname" type="text" class="contact-form__input" maxlength="50">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tus apellidos.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe apellidos válidos (solo letras).</p>
                 </div>
             </div>
         </div>
@@ -42,7 +44,7 @@ import Imagen from "../assets/phone-number.png"
                 <div id="phone-number-group" class="group">
                     <input id="phone-number" name="phone-number" type="text" class="text-center contact-form__input" x-mask="(999) 999 9999">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu número de contacto.</p>
-                    <p class="contact-form__message contact-form__invalid-format">Por favor completa tu número de contacto.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe un número de contacto válido.</p>
                 </div>
             </div>
         </div>
@@ -65,6 +67,7 @@ import Imagen from "../assets/phone-number.png"
                 <div id="service-group" class="group">
                     <input id="service" name="service" type="text" class="contact-form__input" maxlength="250">
                     <p class="contact-form__message contact-form__invalid">Por favor escribe tu servicio de interés.</p>
+                    <p class="contact-form__message contact-form__invalid-format">Por favor escribe un servicio válido.</p>
                 </div>
             </div>
         </div>
@@ -76,6 +79,7 @@ import Imagen from "../assets/phone-number.png"
             <div id="birthdate-group" class="group">
                 <input id="birthdate" name="birthdate" type="date" class="text-[#0597F2] contact-form__input">
                 <p class="contact-form__message contact-form__invalid">Por favor escribe tu fecha de nacimiento.</p>
+                <p class="contact-form__message contact-form__invalid-format">Por favor escribe una fecha de nacimiento válida.</p>
             </div>
         </div>
 
